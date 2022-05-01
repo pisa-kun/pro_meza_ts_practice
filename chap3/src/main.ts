@@ -36,3 +36,66 @@ console.log(f);
 b.num = 111;
 console.log(f, b);
 console.log(f === b);
+
+// 3.2 
+type FooBar = {
+    foo: number,
+    bar: string,
+};
+
+const fb: FooBar = {
+    foo: 123,
+    bar: "123",
+};
+// type はobj以外もOK
+type SuperName = string;
+const myname: SuperName = "hoge";
+console.log(myname, typeof(myname));
+
+//3.2.4 interface
+interface FooBarObj {
+    foo: number,
+    bar: string,
+}
+
+const foobarobj: FooBarObj = {
+    foo: 123,
+    bar: "123"
+}
+
+console.log(foobarobj);
+
+// 3.2.6 optional type
+type MyObj = {
+    firstname: string,
+    lastname: string,
+    middlename?: string,
+}
+
+const erichi: MyObj = {
+    firstname: "eri",
+    lastname: "yukimura",
+};
+console.log(erichi);
+console.log(erichi?.middlename);
+
+const yuky: MyObj = {
+    firstname: "yuki",
+    lastname: "tanaka",
+    middlename: "yuky",
+};
+console.log(yuky);
+console.log(yuky?.middlename);
+
+// 3.2.7 readonly
+type roMyObj = {
+    readonly name: string,
+    age: number,
+};
+const roObj: roMyObj = {
+    name: "test",
+    age: 22,
+};
+console.log(roObj);
+//roObj.name = "2"; // NG
+roObj.age = 23; // OK
