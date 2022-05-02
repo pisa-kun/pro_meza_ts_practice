@@ -23,7 +23,7 @@ for(let i = 0; i < str2.length/SPLITNUMBER; i++){
     const user = str2.slice(i*SPLITNUMBER, (i+1)*SPLITNUMBER);
     // ※ string の"0"は文字列として長さが1以上なのでtrue
     // そのため、numberの0に変換してBooleanチェックする
-    const u: User = {name:user[0], age:Number(user[1]), premiumUser:Boolean(Number(user[2]))};
+    const u: User = {name:user[0], age:Number(user[1]), premiumUser:(user[2] === "1")};
     users.push(u);
 }
 for(const user of users){
