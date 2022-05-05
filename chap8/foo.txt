@@ -1,0 +1,9 @@
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----       2022/05/05     23:22                dist
+d-----       2022/05/05     14:52                node_modules
+d-----       2022/05/05     14:53                src
+-a----       2021/12/28      0:14            631 .gitignore
+-a----       2022/05/05     14:52            616 package-lock.json
+-a----       2022/05/05     14:53            320 package.json
+-a----       2022/05/05     14:53            333 tsconfig.json
