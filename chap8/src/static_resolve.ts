@@ -23,3 +23,23 @@ import {readFile} from "fs/promises"
         console.log("c.txt : ", c);
     });
 }
+
+// 8.3.7
+// promise.allSettled
+// 全てのプロミスが必ず終了するまで待機する
+{
+    const sleepReject = (duration: number) => {
+        return new Promise<never>((resolve, reject) => {
+            setTimeout(reject, duration);
+        });
+    }
+
+    const p = Promise.allSettled([
+        readFile("a.txt", "utf-8"),
+        sleepReject(5000),
+    ]);
+
+    p.then((result) => {
+        console.log(result);
+    });
+}
